@@ -57,7 +57,8 @@ export const Todos = () => {
         <div>
             <TodoInput addTodo={handleAddTodo}></TodoInput>
             <h1>Todo List</h1>
-            {isLoading && <h1>Loading</h1>}
+            {isLoading && <h1>Loading</h1>
+            }
             {
                 todos.length > 0 && todos.map((el) => {
                     return (
