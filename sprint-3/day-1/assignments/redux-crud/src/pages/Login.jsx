@@ -13,7 +13,7 @@ export const Login=()=>{
 
 
     const handleSubmit=(e)=>{
-        e.prevntDefault();
+        e.preventDefault();
         const userData={
             email,
             password
