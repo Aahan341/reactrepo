@@ -23,7 +23,7 @@ export const Login=()=>{
         setPassword("");
     }
     return (
-        <DIV>
+        <DIV auth={auth}>
             <h2>User login</h2>
             <h3>{auth? "Login Succesfull!!":"Login To continue"}</h3>
             
@@ -57,6 +57,10 @@ const DIV = styled.div`
         gap: 15px;
         align-items:center;
         
+    }
+
+    h3{
+        color:${({auth})=>auth? `green`:`red`};
     }
 
     input {
