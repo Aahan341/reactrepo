@@ -74,7 +74,7 @@
       "price": "2400",
       "brand": "nike",
       "discount": "15%",
-      "gender": "male",
+      "gender": "kids",
       "id": 9
     },
     {
@@ -92,7 +92,7 @@
       "price": "2400",
       "brand": "nike",
       "discount": "15%",
-      "gender": "male",
+      "gender": "kids",
       "id": 11
     },
     {
@@ -110,7 +110,7 @@
       "price": "2400",
       "brand": "nike",
       "discount": "15%",
-      "gender": "male",
+      "gender": "female",
       "id": 13
     }
 

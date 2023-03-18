@@ -13,9 +13,9 @@ export const addProduct = (data)=>(dispatch)=>{
 } ;
 
 
-export const getProducts = (dispatch) =>{
+export const getProducts = (paramObj) => (dispatch) =>{
     dispatch ({type:PRODUCT_REQUEST});
-    axios.get("http://localhost:8080/products").then((res)=>{
+    axios.get("http://localhost:8080/products",paramObj).then((res)=>{
         dispatch({type:GET_PRODUCT_SUCCESS,payload:res.data})
     })
     .catch(()=>{

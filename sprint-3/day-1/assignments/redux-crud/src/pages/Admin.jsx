@@ -52,7 +52,7 @@ export const Admin =()=>{
             name="title"
             placeholder="Title" />
 
-            <input type="text" value={product.price}
+            <input type="number" value={product.price}
              onChange={(e)=>{
                 handleChange(e);
             }} 

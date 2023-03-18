@@ -2,15 +2,19 @@ import styled from 'styled-components';
 import React, { useState } from "react";
 import {useDispatch, useSelector} from "react-redux"
 import { login } from '../redux/authReducer/action';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 export const Login=()=>{
     const [email, setEmail]=useState("");
     const [password,setPassword]=useState("");
-
-    const dispatch = useDispatch();
+    const location = useLocation();
+    const navigate=useNavigate();
 
     const {auth} = useSelector(store=>store.authReducer);
-
+    const dispatch = useDispatch();
+    
+    console.log(location)
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -18,7 +22,9 @@ export const Login=()=>{
             email,
             password
         };
-     dispatch(login(userData))
+     dispatch(login(userData)).then(()=>{
+        navigate(location.state,{replace:true});
+     })
         setEmail("");
         setPassword("");
     }
