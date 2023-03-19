@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { PRODUCT_FAILURE, PRODUCT_REQUEST, ADD_PRODUCT_SUCCESS, GET_PRODUCT_SUCCESS } from "./actionTypes";
+import { PRODUCT_FAILURE, PRODUCT_REQUEST, ADD_PRODUCT_SUCCESS, GET_PRODUCT_SUCCESS, PATCH_PRODUCT_SUCCESS } from "./actionTypes";
 
 export const addProduct = (data)=>(dispatch)=>{
     dispatch({type:PRODUCT_REQUEST})
@@ -21,4 +21,17 @@ export const getProducts = (paramObj) => (dispatch) =>{
     .catch(()=>{
         dispatch({type:PRODUCT_FAILURE});
     })
+};
+
+export const editProduct = (dataObj,id) =>(dispatch)=>{
+       dispatch ({type:PRODUCT_REQUEST})
+
+       return axios
+       .patch(`http://localhost:8080/products/${id}`,dataObj).then(()=>{
+        dispatch({type:PATCH_PRODUCT_SUCCESS});
+       })
+       .catch(()=>{
+        dispatch({type:PRODUCT_FAILURE});
+       });
+      
 }
